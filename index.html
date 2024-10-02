@@ -16,18 +16,21 @@
   <body>
     <header class="container">
       <h1>Cars database</h1>
-      <form id="searchCar">
-        <h2>Search</h2>
-        <div class="form_group">
-          <label for="search">License</label>
-          <input type="text" id="search" />
-        </div>
-        <button type="submit">submit</button>
-      </form>
-      <p id="searchResult"></p>
+      <div>
+        <form id="searchCar">
+          <h2>Search</h2>
+          <div class="form_group">
+            <label for="search">License</label>
+            <input type="text" id="search" />
+          </div>
+          <button type="submit">submit</button>
+        </form>
+        <p id="searchResult"></p>
+      </div>
     </header>
     <main>
       <section class="input container">
+        <div id="message"></div>
         <h2>Add car</h2>
         <form id="addCar">
           <div>
@@ -74,6 +77,7 @@
               <th>Color</th>
               <th>Price</th>
               <th>Discount</th>
+              <th></th>
             </tr>
           </thead>
           <tbody></tbody>
