@@ -30,12 +30,12 @@ class Car {
 
 }
 
-const displayMessage = (message, type = "success") => {
-    const messageElement = document.querySelector("#message");
-    messageElement.textContent = message;
-    messageElement.className = type;
+const displayMessage = (message, type = "success") => { // arrow funct, shows message when called (message = declared as argument of function; type = optional argument with a default value "sucess" for CSS auswahl)
+    const messageElement = document.querySelector("#message"); // shows in html document
+    messageElement.textContent = message; // takes the value of current message
+    messageElement.className = type; // for CSS: type wird definiert
     setTimeout(() => {
-        messageElement.textContent = "";
+        messageElement.textContent = ""; // after 3sec messageEl takes Value empty String and empty class and turns on the default CSS value "hidden" 
         messageElement.className = "";
     }, 3000);
 };

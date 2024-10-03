@@ -27,6 +27,7 @@ header div {
   flex-wrap: wrap;
   align-items: center;
 }
+
 header form {
   width: 50%;
 }
@@ -136,8 +137,8 @@ tr:nth-child(even) {
 #message {
   margin-top: 1rem;
   position: fixed;
-  top:1rem;
-  right:1rem;
+  top: 1rem;
+  right: 1rem;
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
