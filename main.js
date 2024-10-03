@@ -1,7 +1,7 @@
 'use strict';
 
 const addCarForm = document.querySelector('#addCar');
-const searchCarForm = document.querySelector('#searchCar');
+const searchCarForm = document.querySelector('#searchCar'); // for reset the form
 
 const cars = [];
 
@@ -17,9 +17,9 @@ class Car {
 }
 
 const addCar = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // to prevent reloading of the page
 
-    const license = document.querySelector('#license').value.trim();
+    const license = document.querySelector('#license').value.trim(); //trim removes the white spaces
     const maker = document.querySelector('#maker').value.trim();
     const model = document.querySelector('#model').value.trim();
     const owner = document.querySelector('#owner').value.trim();
@@ -30,20 +30,20 @@ const addCar = (e) => {
 
     addCarForm.reset();
 
-    cars.push(newCar)
+    cars.push(newCar) // pushing new car into array
     displayTable();
 }
 
 const displayTable = () => {
     const table = document.querySelector('#carsTable');
 
-    table.innerHTML = table.rows[0].innerHTML;
+    table.innerHTML = table.rows[0].innerHTML; // 0 starts from the first element in the table and what else does it do?
 
-    cars.forEach(car => {
-        const row = table.insertRow(-1);
+    cars.forEach(car => { // why you need forEach to create a row and not only create the row?
+        const row = table.insertRow(-1); // (-1) is used in table, but no one understands
 
         Object.values(car).forEach(text => {
-            const cell = row.insertCell(-1);
+            const cell = row.insertCell(-1); // inserts cell with value
             cell.textContent = text;
         })
     })
