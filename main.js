@@ -13,16 +13,16 @@ class Car {
         this.owner = owner;
         this.price = parseFloat(price);
         this.color = color;
-        this.year = parseInt(year);
+        this.year = parseInt(year); // getting all inputs including year, making sure to get numbers and 
     }
 
     getCarAge() {
         const currentYear = new Date().getFullYear();
-        return currentYear - this.year;
+        return currentYear - this.year; // current Year is independent from fix value, Date constructs a new year and returns the current year minus the car's age
     }
 
     getDiscountedPrice() {
-        return this.getCarAge() > 10 ? this.price * 0.85 : this.price;
+        return this.getCarAge() > 10 ? this.price * 0.85 : this.price; // returns asks if the difference of the prev function is more than 10 years old? if yes, price will be updated to discounted price
     }
 
     isEligibleForDiscount() {
