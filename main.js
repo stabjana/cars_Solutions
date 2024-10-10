@@ -70,7 +70,7 @@ const addCar = (e) => {
         addCarForm.reset();
         cars.push(newCar);
 
-        localStorage.setItem('cars', JSON.stringify(cars));
+        localStorage.setItem('cars', JSON.stringify(cars)); // only strings allowed in local storage -> JSON.stringify - setItem saves it into storage
 
         displayTable();
         displayMessage("Car added successfully!");
@@ -81,11 +81,12 @@ const addCar = (e) => {
 };
 
 const loadCarsFromLocalStorage = () => {
-    const storedCars = localStorage.getItem('cars');
+    const storedCars = localStorage.getItem('cars'); // restore items from the local storage
     if (storedCars) {
-        const parsedCars = JSON.parse(storedCars);
+        const parsedCars = JSON.parse(storedCars); // to turn it into an object again
         parsedCars.forEach(carData => {
-            cars.push(new Car(carData.license, carData.maker, carData.model, carData.owner, carData.price, carData.color, carData.year));
+            cars.push(new Car(carData.license, carData.maker, carData.model, carData.owner, carData.price, carData.color, carData.year)); /* JSON.parse(storedCars): Wandelt den JSON-String in ein Array von Objekten um. Diese Objekte sind aber keine Car-Objekte, sondern nur normale, einfache JavaScript-Objekte mit Eigenschaften wie license, maker, model usw.
+            Du brauchst aber Instanzen der Car-Klasse, um auf Methoden und Eigenschaften der Klasse Car zugreifen zu können. */
         });
         displayTable();
     }
